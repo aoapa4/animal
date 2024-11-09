@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #444;
+    width: 100%;
+    height: 60px;
+    padding: 15px 0;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    width: auto; 
+    display: flex;
+    align-items: center; 
+  }
+  header .logo p {
+    color: #fff; 
+    font-size: 30px; 
+  }
+  
+header nav {
+    margin-right: 20px;
+}
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+header nav a:hover {
+    color: #333;
+}
+/* 버튼 */
+.button {
+    padding: 5px 10px;
+    margin-left: 7px;
+    background: linear-gradient(90deg, #ffffff, #474747);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background-size: 200% 100%;
+    transition: background-position 0.4s ease;
+}
+.button:hover {
+    background-position: -100% 0;
+}
+/* 바디 부분 */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+
+/* 홈 css */
+.home-section {
+    /* background-image: url('./home_main_img1.jpg'); */
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    margin-top: 60px;
+}
+.home-section h1 {
+    font-size: 60px;
+    font-weight: bold;
+    position: absolute;
+    top: 33%;
+    left: 5%;
+}
+.home-section p {
+    font-size: 25px;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+/* 전체 화면 슬라이드 스타일 */
+.home-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    transition: opacity 1s;
+}
+.home-section h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.home-section p {
+    font-size: 25px;
+}
+
+/* 슬라이드 전환 애니메이션 */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
+}
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+/* 변환 페이지 css */
+.convert{
+    background-color: #000000;
+}
+canvas {
+    border: 1px solid #ffffff;
+    margin-bottom: 20px;
+    height: 275px;
+}
+#outputCanvas {
+    filter: blur(5px); 
+}
+.convert>input,select,#container{
+    color: #dcdcdc;
+    margin-top: 30px;
+} 
+
+
+
+/* 소개 페이지 css */
+#intro{
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    color: #dcdcdc;
+    background: #000;
+}
+.about {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    height: 800px;
+    gap: 50px;
+    padding: 0 400px 0 400px;
+    background: #000;
+}
+.about > div {
+    width: calc(40%);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    text-align: left; 
+    gap: 15px;  
+    color: #dcdcdc;
+}
+.about img {
+    width: 60%;  
+    height: auto;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.393); 
+    transition: transform 0.3s ease; 
+}
+.about img:hover {
+    transform: scale(1.05); 
+}
+.about p {
+    font-size: 15px;
+    color: #c0c0c0;  
+    line-height: 1.5;
+    margin-top: 25px;
+    flex-grow: 80; 
+    max-width: 50%;  
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .about > div {
+        width: calc(50% - 20px);  
+    }
+}
+@media (max-width: 480px) {
+    .about > div {
+        width: 100%;  
+    }
+}

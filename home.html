@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 홈페이지</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./logo.png" alt="logo"  style="width: 130px; height: auto;">
+            <p>눈맞춤</p>
+        </div>
+        <nav>
+            <a href="home.html">홈</a>
+            <a href="convert.html">이미지 변환</a>
+            <a href="about.html">소개</a>
+        </nav>
+    </header>
+
+
+    <!-- (이미지 하나 넣을 경우) 홈 섹션 -->
+    <!-- <section class="home-section">
+        <h1>“고양이와 강아지의 눈으로 바라본 색다른 세상”</h1>
+        <p>사랑스러운 친구들이 느끼는 색의 감정을 경험해 보세요.</p>
+    </section> -->
+
+     <!-- 슬라이드 섹션 -->
+     <section class="home-section">
+        <div class="slide active" style="background-image: url('./home_main_img1.jpg');">
+            <h1>“고양이와 강아지의 눈으로 바라본 색다른 세상”</h1>
+            <p>사랑스러운 친구들이 느끼는 색의 감정을 경험해 보세요.</p>
+        </div>
+        <div class="slide" style="background-image: url('./home_main_img2.jpg');">
+            <h1>“고양이와 강아지의 눈으로 바라본 색다른 세상”</h1>
+            <p>사랑스러운 친구들이 느끼는 색의 감정을 경험해 보세요.</p>
+        </div>
+        <div class="slide" style="background-image: url('./home_main_img3.jpg');">
+            <h1>“고양이와 강아지의 눈으로 바라본 색다른 세상”</h1>
+            <p>사랑스러운 친구들이 느끼는 색의 감정을 경험해 보세요.</p>
+        </div>
+    </section>
+
+    
+    <script>
+        // 슬라이드 전환 JavaScript
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // 3초마다 슬라이드 전환
+        setInterval(nextSlide, 3000);
+    </script>
+
+</body>
+</html>
